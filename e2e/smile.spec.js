@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer'
 (async () => {
   console.log('begin testtttttt');
   
-  const browser = await puppeteer.launch({ headless: false, args: ['--no-sandbox'] });
+  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   console.log('11111111');
 
   const page = await browser.newPage();
