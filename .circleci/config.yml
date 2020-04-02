@@ -17,6 +17,7 @@ jobs:
         - run:
             name: npm start
             command: 'npm run start-script'
+            background: true
         - run:
             name: show port
             command: 'netstat -ant'
