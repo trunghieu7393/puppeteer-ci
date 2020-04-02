@@ -10,7 +10,7 @@ import puppeteer from 'puppeteer'
   const page = await browser.newPage();
   console.log('22222222');
   
-  await page.goto('http://127.0.0.1:3000/emoji-search')
+  await page.goto('http://127.0.0.1:3006/emoji-search')
   console.log('33333333');
   
   
