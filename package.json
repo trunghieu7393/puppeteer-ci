@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "pm2 start ./node_modules/react-scripts/scripts/start.js --name 'my-app'",
+    "start-script": "react-scripts start",
     "build": "react-scripts build",
     "test": "node ./e2e/$FILE.spec.js",
     "eject": "react-scripts eject",
