@@ -15,13 +15,13 @@ jobs:
             command: 'npm install'
         - run:
             name: npm start
-            command: 'npm run start'
-        - run:
-            name: show port
-            command: 'netstat -ant'
-        - run:
-            name: npm test
-            command: 'FILE=smile npm run test'
+            command: 'npm run start && netstat -ant && FILE=smile npm run test'
+        # - run:
+        #     name: show port
+        #     command: 'netstat -ant'
+        # - run:
+        #     name: npm test
+        #     command: 'FILE=smile npm run test'
 
 workflows:
   version: 2
