@@ -18,7 +18,7 @@ jobs:
             command: 'npm run start'
         - run:
             name: npm test
-            command: 'FILE=smile npm run test'
+            command: 'ifconfig && FILE=smile npm run test'
 
 workflows:
   version: 2
