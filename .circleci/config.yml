@@ -14,7 +14,7 @@ jobs:
             command: 'npm run start'
         - run:
             name: npm test
-            command: 'npm run test'
+            command: 'FILE=smile npm run test'
 
 workflows:
   version: 2
