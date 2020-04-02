@@ -6,8 +6,6 @@ jobs:
         - image: node:13-slim # cai nay giong trong dockerfile
       steps: # a collection of executable commands
         - checkout # special step to check out source code to working directory
-        # DLC will explicitly cache layers here and try to avoid rebuilding.
-        - run: docker build .
         - run:
             name: setup
             command: |
