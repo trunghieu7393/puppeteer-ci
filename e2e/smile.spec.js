@@ -2,9 +2,17 @@ import puppeteer from 'puppeteer'
 // import { page } from './init';
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
+  console.log('begin testtttttt');
+  
+  const browser = await puppeteer.launch({ headless: false, args: ['--no-sandbox'] });
+  console.log('11111111');
+
   const page = await browser.newPage();
+  console.log('22222222');
+  
   await page.goto('http://127.0.0.1:3000/emoji-search')
+  console.log('33333333');
+  
   
   // await page.setViewport({ width: 1440, height: 798 })
   
@@ -20,4 +28,6 @@ import puppeteer from 'puppeteer'
   await page.click('body > #root > div > .component-emoji-results > .component-emoji-result-row:nth-child(6)')
   
   await browser.close()
+  console.log('end testtttttt');
+  
 })();
