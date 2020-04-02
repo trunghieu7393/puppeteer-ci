@@ -1,8 +1,10 @@
 import puppeteer from 'puppeteer'
 // import { page } from './init';
+import ip from'ip';
 
 (async () => {
   console.log('begin testtttttt');
+  console.log('ip: ', ip.address());
   
   const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
   console.log('11111111');
@@ -10,7 +12,7 @@ import puppeteer from 'puppeteer'
   const page = await browser.newPage();
   console.log('22222222');
   
-  await page.goto('http://127.0.0.1:80/emoji-search')
+  await page.goto(`http://${ip.address()}/emoji-search`)
   console.log('33333333');
   
   
