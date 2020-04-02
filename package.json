@@ -23,6 +23,7 @@
     "start-script": "react-scripts start",
     "build": "react-scripts build",
     "test": "node ./e2e/$FILE.spec.js",
+    "test-script": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
