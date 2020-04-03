@@ -26,11 +26,7 @@ jobs:
             key: v1-dependencies-{{ checksum "package.json" }}
         - run:
             name: npm start
-            command: 'npm run start-script && netstat -ant'
-            background: true
-        # - run:
-        #     name: npm start
-        #     command: 'npm run start && netstat -ant'
+            command: 'npm run start && netstat -ant'
         # - run:
         #     name: npm build
         #     command: 'npm run build && netstat -ant'
