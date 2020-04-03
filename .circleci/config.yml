@@ -36,7 +36,7 @@ jobs:
             command: node -p "require('ip').address()" > ip.txt
         - run:
             name: waiting for node server to start
-            command: 'wget --retry-connrefused --waitretry=2 -t 5 "http://$(cat ip.txt):3333" > /dev/null'
+            command: 'wget --retry-connrefused --waitretry=2 -t 5 "http://$(cat ip.txt):3006" > /dev/null'
         - run:
             name: show port
             command: 'netstat -ant'
