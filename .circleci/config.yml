@@ -30,6 +30,7 @@ jobs:
         - run:
             name: start express
             command: 'node ./e2e/start-express.js'
+            background: true
         - run:
             name: show port
             command: 'netstat -ant'
