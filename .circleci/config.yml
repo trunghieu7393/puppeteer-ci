@@ -14,9 +14,9 @@ jobs:
             keys:
               - v1-dependencies-{{ checksum "package.json" }}
               - v1-dependencies-
-        - run:
-            name: install pm2
-            command: 'npm install pm2 -g'
+        # - run:
+        #     name: install pm2
+        #     command: 'npm install pm2 -g'
         - run:
             name: npm install
             command: 'npm install'
@@ -36,13 +36,13 @@ jobs:
             command: node -p "require('ip').address()" > ip.txt
         - run:
             name: waiting for node server to start
-            command: 'wget --retry-connrefused --waitretry=2 -t 5 "http://$(cat ip.txt):3006" > /dev/null'
+            command: 'wget --retry-connrefused --waitretry=2 -t 5 "http://$(cat ip.txt):3333" > /dev/null'
         - run:
             name: show port
             command: 'netstat -ant'
-        - run:
-            name: show pm2
-            command: 'pm2 list'
+        # - run:
+        #     name: show pm2
+        #     command: 'pm2 list'
         - run:
             name: npm test
             command: 'FILE=smile npm run test'
