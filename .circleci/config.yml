@@ -28,8 +28,11 @@ jobs:
             name: npm start
             command: 'npm run start-script && netstat -ant'
         - run:
+            name: start express
+            command: 'node ./e2e/start-express.js'
+        - run:
             name: show port
-            command: 'node ./e2e/start-express.js && netstat -ant'
+            command: 'netstat -ant'
         - run:
             name: show pm2
             command: 'pm2 list'
