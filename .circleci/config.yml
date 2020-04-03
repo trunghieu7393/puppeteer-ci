@@ -15,6 +15,9 @@ jobs:
               - v1-dependencies-{{ checksum "package.json" }}
               - v1-dependencies-
         - run:
+            name: install pm2
+            command: 'npm install pm2 -g'
+        - run:
             name: npm install
             command: 'npm install'
         - save_cache:
