@@ -33,7 +33,7 @@ jobs:
             background: true
         - run:
             name: storing local IP address
-            command: 'node -p "require(\'ip\').address()" > logs/ip.log'
+            command: node -p "require('ip').address()" > logs/ip.log
         - run:
             name: waiting for node server to start
             command: 'wget --retry-connrefused --waitretry=2 -t 5 "http://$(cat logs/ip.log):3333" > /dev/null'
