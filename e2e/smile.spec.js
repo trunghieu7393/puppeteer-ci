@@ -12,7 +12,7 @@ import ip from'ip';
   const page = await browser.newPage();
   console.log('22222222');
   
-  await page.goto(`http://${ip.address()}:3333/emoji-search`)
+  await page.goto(`http://${ip.address()}:3006/emoji-search`)
   console.log('33333333');
   
   
