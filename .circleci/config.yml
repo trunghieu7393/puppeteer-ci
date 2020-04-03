@@ -14,9 +14,9 @@ jobs:
             keys:
               - v1-dependencies-{{ checksum "package.json" }}
               - v1-dependencies-
-        # - run:
-        #     name: install pm2
-        #     command: 'npm install pm2 -g'
+        - run:
+            name: install pm2
+            command: 'npm install pm2 -g'
         - run:
             name: npm install
             command: 'npm install'
@@ -25,24 +25,27 @@ jobs:
               - node_modules
             key: v1-dependencies-{{ checksum "package.json" }}
         - run:
-            name: npm build
-            command: 'npm run build && netstat -ant'
-        - run:
-            name: start express
-            command: 'node ./e2e/start-express.js'
-            background: true
+            name: npm start
+            command: 'npm run start && netstat -ant'
+        # - run:
+        #     name: npm build
+        #     command: 'npm run build && netstat -ant'
+        # - run:
+        #     name: start express
+        #     command: 'node ./e2e/start-express.js'
+        #     background: true
         - run:
             name: storing local IP address
             command: node -p "require('ip').address()" > ip.txt
         - run:
             name: waiting for node server to start
-            command: 'wget --retry-connrefused --waitretry=2 -t 5 "http://$(cat ip.txt):3333/emoji-search" > /dev/null'
+            command: 'wget --retry-connrefused --waitretry=5 -t 5 "http://$(cat ip.txt):3006" > /dev/null'
         - run:
             name: show port
             command: 'netstat -ant'
-        # - run:
-        #     name: show pm2
-        #     command: 'pm2 list'
+        - run:
+            name: show pm2
+            command: 'pm2 list'
         - run:
             name: npm test
             command: 'FILE=smile npm run test'
